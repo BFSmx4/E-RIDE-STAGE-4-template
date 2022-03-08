@@ -32,8 +32,8 @@ export default class RideScreen extends Component {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
 
     this.setState({
-      /*status === "granted" is true when user has granted permission
-          status === "granted" is false when user has not granted the permission
+      /*status === "granted" es verdadero cuando el usuario concede el permiso.
+          status === "granted" es falso cuando el usuario no concede el permiso.
         */
       hasCameraPermissions: status === "granted",
       domState: "scanner",
@@ -65,11 +65,11 @@ export default class RideScreen extends Component {
   };
 
   assignBike = () => {
-    console.log("You have rented the bike for next 1 hour. Enjoy your ride!!");
+    console.log("Has rentado la bicicleta por la próxima hora. ¡Disfruta tu viaje!");
   };
 
   returnBike = () => {
-    console.log("We hope you enjoyed your ride");
+    console.log("Esperamos que hayas disgrutado tu viaje.");
   };
 
   render() {
@@ -87,7 +87,7 @@ export default class RideScreen extends Component {
         <View style={styles.upperContainer}>
           <Image source={appIcon} style={styles.appIcon} />
           <Text style={styles.title}>e-ride</Text>
-          <Text style={styles.subtitle}>A Eco-Friendly Ride</Text>
+          <Text style={styles.subtitle}>Un viaje eco-friendly</Text>
         </View>
         <View style={styles.lowerContainer}>
           <View style={styles.textinputContainer}>
@@ -110,14 +110,14 @@ export default class RideScreen extends Component {
               style={styles.scanbutton}
               onPress={() => this.getCameraPermissions()}
             >
-              <Text style={styles.scanbuttonText}>Scan</Text>
+              <Text style={styles.scanbuttonText}>Escanear</Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity
             style={[styles.button, { marginTop: 25 }]}
             onPress={this.handleTransaction}
           >
-            <Text style={styles.buttonText}>Unlock</Text>
+            <Text style={styles.buttonText}>Desbloquear</Text>
           </TouchableOpacity>
         </View>
       </View>
